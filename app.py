@@ -2,17 +2,13 @@ import streamlit as st
 import pandas as pd
 import plotly.express as px
 
-# --- CONFIGURACIÓN DE LA PÁGINA ---
-# Esto debe ser lo primero que ejecutes en Streamlit
+
 st.set_page_config(
-    page_title="Evolución de Habilidades de Datos",
+    page_title="Más Allá del Hype: Framework Estratégico para Data Analyst",
     page_icon="📊",
     layout="wide"
 )
 
-# --- FUNCIÓN PARA CARGAR DATOS (con caché) ---
-# st.cache_data "recuerda" el resultado. Si los datos no cambian,
-# no los vuelve a cargar, haciendo la app más rápida.
 @st.cache_data
 def load_data():
     df = pd.read_csv('df_metrics.csv', sep=';')
@@ -20,20 +16,96 @@ def load_data():
 
 df = load_data()
 
-# --- TÍTULO Y GANCHO (HOOK) ---
-st.title("📊 Evolución de Habilidades en Data Analytics (2012-2022)")
+
+st.title("📊 Más Allá del Hype: Framework Estratégico para Data Analyst")
 
 st.markdown("""
-Esta aplicación analiza cómo ha cambiado la demanda de habilidades clave en el análisis de datos durante la última década. 
-Como especialista en **People Analytics**, mi objetivo es usar datos para responder preguntas críticas de negocio:
-* ¿Están nuestras descripciones de puesto **desactualizadas**?
-* ¿En qué habilidades deberíamos **invertir** para capacitar a nuestro equipo?
-* ¿Dónde está la verdadera **brecha de talento** en el mercado?
+En un mercado tecnológico ruidoso, **donde cada día nace una nueva herramienta**
+¿Dónde invertimos nuestro tiempo y dinero? 
+            
+Para responder esto analice los puestos de analista de datos en googe research desde el 2022 hasta el 2025.
+Con el objetivo de construir un sistema de decisión que separara las tendencias estables de las modas volátiles. 
+Este proyecto no es solo un dashboard de frecuencias, es un GPS estratégico para profesionales, educadores y empresas interesadas.
 """)
 
 st.markdown("---")
+st.header("Proceso de analisis")
 
-# --- EL GRÁFICO INTERACTIVO (Tu análisis principal) ---
+st.subheader("1. El Problema del 'Crecimiento Engañoso  ")
+st.markdown("""
+El problema de medir la demanda de habilidades es que solo medir el "crecimiento" puede ser engañoso.
+* Una habilidad puede crecer +200 porciento un mes y caer -150 porciento el siguiente. Esto es volatilidad (o Hype para el internet).
+* Otra habilidad puede crecer +10 porciento de forma constante, mes tras mes. Esto es tendencia (Valor Real).
+Basar una decisión de inversión en la primera opción es arriesgado. 
+Es necesario una métrica que mida no solo el crecimiento, sino la calidad y estabilidad de ese crecimiento.
+""")
+
+st.subheader("2. Mi Framework de Métricas")
+st.markdown("""
+Para resolver esto, diseñé un framework de métricas que va de lo simple a lo estratégico. 
+* Métrica Nivel 1: Demanda Actual. Mide el tamaño y la penetración actual de una habilidad. 
+* Métrica Nivel 2: Tasa de crecimiento simple (Año vs. Año y últimos 6 meses). Mide la velocidad. Nos dice qué tan rápido se está moviendo una habilidad
+* Métrica Nivel 3: El Ratio de "Calidad de Tendencia" (ratio_sharpe) Tomé prestado el Ratio Sharpe, un concepto financiero. 
+La fórmula conceptual es: """)
+
+st.latex(r'''
+                \text{Ratio Sharpe} = \frac{\text{Crecimiento Promedio (Retorno)}}{\text{Volatilidad de ese Crecimiento (Riesgo)}}
+            ''')
+
+st.markdown("""
+        Esta métrica es nuestro "filtro de hype".
+        *Un Ratio Sharpe bajo* significa que el crecimiento de la habilidad es errático, volátil e impredecible (alto riesgo). Podría ser una moda pasajera.
+        *Un Ratio Sharpe alto* significa que el crecimiento es estable, consistente y predecible (bajo riesgo). Esta es una tendencia estructural del mercado.
+""")
+
+st.subheader("3. La Matriz de Decisión Estratégica")
+st.markdown("""
+Al combinar estas métricas, pude crear una matriz 2x2 que funciona como una herramienta para tomar decisiones. 
+En lugar de usar el "crecimiento simple", usé el ratio_sharpe (Calidad de Tendencia) como mi Eje X.
+Esto nos da cuatro perfiles claros para la toma de decisiones:
+""")
+
+
+col1, col2, col3, col4 = st.columns(4)
+
+with col1:
+    st.subheader("Cuadrante 1: Fundamentales")
+    st.write(""" 
+    * Alta Demanda y Baja Calidad de Tendencia
+    * Qué son: Habilidades maduras, el estándar de la industria (ej. SQL, Excel).
+    * La Solución: Son el 'costo de entrada'. No tenerlas te descalifica. Su crecimiento es bajo o estable porque ya están en todas partes
+    """)
+
+with col2:
+    st.subheader("Cuadrante 2: Estratégicas")
+    st.write("""
+    *Alta Demanda y Alta Calidad de Tendencia)             
+    * Qué son: El "Stack Ganador" (ej. Python, Power BI, Tableau).
+    *La Solución: Aquí es donde se debe enfocar la inversión. Tienen alta demanda y un crecimiento estable y probado. Este es el punto dulce del mercado: alta recompensa, bajo riesgo relativo.
+    """)
+
+with col3:
+    st.subheader("Cuadrante 3: Emergentes")
+    st.write("""
+    * Baja Demanda y Alta Calidad de Tendencia
+    * Qué son: Habilidades de nicho o nuevas con crecimiento muy estable (ej. Snowflake, Databricks).
+    * La Solución: Son las "apuestas de futuro". Para un profesional, dominarlas es un diferenciador clave. Para una empresa, es donde debe pilotar su innovación.
+    """)
+
+
+with col4:
+    st.subheader("Cuadrante 4: Heredadas ")
+    st.write("""
+    * Baja Demanda y Baja Calidad de Tendencia
+    * Qué son: Habilidades en declive, volátiles o siendo reemplazadas (ej. herramientas propietarias antiguas).
+    * La Solución: Representan un riesgo de obsolescencia. Las empresas deben planificar el upskilling y los profesionales deben migrar activamente fuera de aquí.
+    """)
+
+
+#--------------------------------------------------------------------
+st.markdown("---")
+
+
 st.header("Análisis de Tendencias por Habilidad")
 st.write("Usa el gráfico interactivo para explorar la evolución de cada habilidad. Haz doble clic en una habilidad de la leyenda para aislarla.")
 
@@ -56,33 +128,16 @@ fig = px.scatter(
 fig.add_vline(x=umbral_crec_6m, line_width=1, line_dash="dash", line_color="gray")
 fig.add_hline(y=umbral_sharpe, line_width=1, line_dash="dash", line_color="gray")
 
-# Etiquetas claras para los ejes
+# Etiquetas  para los ejes
 fig.update_layout(
     xaxis_title="Crecimiento Últimos 6m (%)",
     yaxis_title="Ratio de Sharpe (Estabilidad / Bajo Riesgo)"
 )
 
 st.plotly_chart(fig, use_container_width=True, key="grafico_cuadrantes_habilidades")
+
+
+
 # Muestra el gráfico en Streamlit
+#--------------------------------------------------------------------
 
-
-# --- CONCLUSIONES (El Insight de People Analytics) ---
-st.markdown("---")
-st.header("Conclusiones Clave para la Estrategia de Talento")
-
-# Usamos columnas para un layout más limpio
-col1, col2 = st.columns(2)
-
-with col1:
-    st.subheader("💡 Para Adquisición de Talento (TA)")
-    st.write("""
-    * **Python es el nuevo Excel:** La demanda de Python ha superado a la de Excel, convirtiéndose en una habilidad fundamental, no solo 'deseable'.
-    * **Enfoque en el Stack Moderno:** Las descripciones de puesto deben priorizar el stack 'SQL + Python + Tableau/Power BI'.
-    """)
-
-with col2:
-    st.subheader("📈 Para Aprendizaje y Desarrollo (L&D)")
-    st.write("""
-    * **Priorizar el Upskilling:** Los datos muestran una clara dirección para los programas de capacitación internos.
-    * **Cerrar la Brecha:** Invertir en Python y herramientas de visualización modernas generará el mayor ROI para preparar a la fuerza laboral.
-    """)
