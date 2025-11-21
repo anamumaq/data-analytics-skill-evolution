@@ -71,24 +71,27 @@ with tab1:
     st.subheader("Cuadrante 1: Fundamentales")
     st.markdown("""
     * Alta Demanda y Baja Calidad de Tendencia
-    * Qué son: Habilidades maduras, el estándar de la industria (ej. SQL, Excel).
-    * La Solución: Son el 'costo de entrada'. No tenerlas te descalifica. Su crecimiento es bajo o estable porque ya están en todas partes
+    * Habilidades maduras, el estándar de la industria (ej. SQL, Excel).
+    * Son el 'costo de entrada' no tenerlas te descalifica. 
+    * Su crecimiento es bajo o estable porque ya están en todas partes
     """)
 
 with tab2:
     st.subheader("Cuadrante 2: Estratégicas")
     st.markdown("""
     * Alta Demanda y Alta Calidad de Tendencia)             
-    * Qué son: El "Stack Ganador" (ej. Python, Power BI, Tableau).
-    *La Solución: Aquí es donde se debe enfocar la inversión. Tienen alta demanda y un crecimiento estable y probado. Este es el punto dulce del mercado: alta recompensa, bajo riesgo relativo.
+    * El "Stack Ganador" (ej. Python, Power BI, Tableau).
+    * Aquí es donde se debe enfocar la inversión. Tienen alta demanda y un crecimiento estable y probado. 
+    * Este es el punto dulce del mercado: alta recompensa, bajo riesgo relativo.
     """)
 
 with tab3:
     st.subheader("Cuadrante 3: Emergentes")
     st.markdown("""
     * Baja Demanda y Alta Calidad de Tendencia
-    * Qué son: Habilidades de nicho o nuevas con crecimiento muy estable (ej. Snowflake, Databricks).
-    * La Solución: Son las "apuestas de futuro". Para un profesional, dominarlas es un diferenciador clave. Para una empresa, es donde debe pilotar su innovación.
+    * Habilidades de nicho o nuevas con crecimiento muy estable (ej. Snowflake, Databricks).
+    * Son las "apuestas de futuro". 
+    * Para un profesional, dominarlas es un diferenciador clave. Para una empresa, es donde debe pilotar su innovación.
     """)
 
 
@@ -96,8 +99,9 @@ with tab4:
     st.subheader("Cuadrante 4: Heredadas ")
     st.markdown("""
     * Baja Demanda y Baja Calidad de Tendencia
-    * Qué son: Habilidades en declive, volátiles o siendo reemplazadas (ej. herramientas propietarias antiguas).
-    * La Solución: Representan un riesgo de obsolescencia. Las empresas deben planificar el upskilling y los profesionales deben migrar activamente fuera de aquí.
+    * Habilidades en declive, volátiles o siendo reemplazadas (ej. herramientas propietarias antiguas).
+    * Representan un riesgo de obsolescencia. 
+    * Las empresas deben planificar el upskilling y los profesionales deben migrar activamente fuera de aquí.
     """)
 
 
