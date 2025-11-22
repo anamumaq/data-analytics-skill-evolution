@@ -130,7 +130,15 @@ fig = px.scatter(
     color='clasificacion', # El color se define por el cuadrante
     hover_name='skills', # Mostrar el nombre del skill al pasar el ratón
     size_max=50, 
-    title='Análisis de Evolución de Skills: Crecimiento vs. Estabilidad (Ratio Sharpe)'
+    title='Análisis de Evolución de Skills: Crecimiento vs. Estabilidad (Ratio Sharpe)',
+    category_orders={
+        'clasificacion': [
+            '1. Inversión de Crecimiento Sólido',
+            '2. Valor de Portafolio Estable', 
+            '3. Activos de Alto Beta / Volatilidad Extrema',
+            '4. Activos en Liquidación'
+        ]
+    }
 )
 
 fig.add_vline(x=umbral_crec_6m, line_width=1, line_dash="dash", line_color="gray")
