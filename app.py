@@ -65,43 +65,49 @@ with st.expander("🎯 3. La Matriz de Decisión Estratégica"):
 
 st.header("📊 Matriz de Skills")
 
-tab1, tab2, tab3, tab4 = st.tabs(["Cuadrante 1: Fundamentales", "Cuadrante 2: Estratégicas", "Cuadrante 3: Emergentes", "Cuadrante 4: Heredadas"])
+st.info("""
+Importante: Este análisis clasifica las tecnologías basándose en su comportamiento estadístico (Ratio de Sharpe) entre 2022 y 2025.
+* "Riesgo/Volatilidad" no significa que la herramienta sea mala; significa que su demanda fluctúa fuertemente (picos de contratación seguidos de pausas).
+* "Estabilidad" indica una demanda constante y resistente a las crisis, típica de nichos muy especializados o tecnologías corporativas críticas.
+""")
+        
+tab1, tab2, tab3, tab4 = st.tabs(["Cuadrante 1", "Cuadrante 2", "Cuadrante 3", "Cuadrante 4"])
 
 with tab1:
-    st.subheader("Cuadrante 1: Fundamentales")
+    st.subheader("Inversión de Crecimiento Sólido")
     st.markdown("""
-    * Alta Demanda y Baja Calidad de Tendencia
-    * Habilidades maduras, el estándar de la industria (ej. SQL, Excel).
-    * Son el 'costo de entrada' no tenerlas te descalifica. 
-    * Su crecimiento es bajo o estable porque ya están en todas partes
+    * Tecnologías: C++, Go, Java, Pandas, NumPy, Git, SAP, VBA.
+    * Análisis: Este cuadrante agrupa dos perfiles opuestos que comparten una característica única: son inmunes a la volatilidad general del mercado.
+        * **El perfil "Tech-Heavy"**: Herramientas como **C++, Go y Git** muestran que el mercado está buscando un nuevo tipo de "Analista Técnico" capaz de integrar soluciones en producción, alejándose del analista de negocio tradicional.
+        * **El fenómeno "Legacy"**: Sorprendentemente, **VBA y SAP** aparecen aquí. Su estabilidad se debe a que son sistemas críticos en banca y grandes corporaciones; aunque no son "moda", su demanda es inelástica (siempre se necesitan) y hay poca oferta de expertos, lo que garantiza un crecimiento constante.
     """)
 
 with tab2:
-    st.subheader("Cuadrante 2: Estratégicas")
+    st.subheader("Valor de Portafolio Estable")
     st.markdown("""
-    * Alta Demanda y Alta Calidad de Tendencia)             
-    * El "Stack Ganador" (ej. Python, Power BI, Tableau).
-    * Aquí es donde se debe enfocar la inversión. Tienen alta demanda y un crecimiento estable y probado. 
-    * Este es el punto dulce del mercado: alta recompensa, bajo riesgo relativo.
+    * Tecnologías: Airflow, PL/SQL, Matplotlib, Qlik, Cognos.
+    * Análisis: Aquí encontramos las herramientas de "Mantenimiento y Operación".
+        * Herramientas como **Airflow o PL/SQL** ya han alcanzado un punto de madurez donde se consideran commodities. No experimentan un "hype" explosivo, pero son requisitos fundamentales en equipos de datos consolidados.
+        * Plataformas de BI tradicionales **Qlik, Cognos** se mantienen aquí porque, aunque pierden terreno frente a competidores más nuevos, tienen una base instalada masiva que asegura trabajo constante.
     """)
 
 with tab3:
-    st.subheader("Cuadrante 3: Emergentes")
+    st.subheader("Activos de Alto Beta / Volatilidad Extrema")
     st.markdown("""
-    * Baja Demanda y Alta Calidad de Tendencia
-    * Habilidades de nicho o nuevas con crecimiento muy estable (ej. Snowflake, Databricks).
-    * Son las "apuestas de futuro". 
-    * Para un profesional, dominarlas es un diferenciador clave. Para una empresa, es donde debe pilotar su innovación.
+    * Tecnologías: Python, SQL, Excel, Power BI, Azure, Snowflake, Tableau.
+    * Análisis (La aparente contradicción): ¿Por qué las herramientas más populares son "volátiles"?
+        * **El Efecto Volumen**: Al ser los estándares del mercado (presentes en el 80-90 porc de ofertas), Python y SQL replican exactamente los ciclos económicos. Cuando hubo congelamiento de contrataciones (2023-2024), su demanda cayó abruptamente; cuando el mercado se reactiva, se disparan.
+        * **Interpretación**: Su clasificación de "riesgo" refleja la saturación y la competencia en estos skills, no su falta de utilidad. Son apuestas obligatorias, pero sujetas a los vaivenes de la economía global.
     """)
 
 
 with tab4:
-    st.subheader("Cuadrante 4: Heredadas ")
+    st.subheader("Activos en Liquidación")
     st.markdown("""
-    * Baja Demanda y Baja Calidad de Tendencia
-    * Habilidades en declive, volátiles o siendo reemplazadas (ej. herramientas propietarias antiguas).
-    * Representan un riesgo de obsolescencia. 
-    * Las empresas deben planificar el upskilling y los profesionales deben migrar activamente fuera de aquí.
+    * Tecnologías: Spark, Scala, TensorFlow, AWS, GCP, BigQuery.
+    * Análisis: Este cuadrante cuenta la historia de la madurez del mercado de datos.
+        * **Separación de Roles**: Hace unos años, se pedía a los Analistas que supieran Spark o TensorFlow. Hoy, las empresas han refinado sus descripciones: esas tareas se han movido oficialmente a los roles de **Data Engineer y Machine Learning Engineer**.
+        * **La Lectura Correcta**: No es que estas tecnologías estén muriendo (al contrario, son gigantes), es que **su demanda específica dentro del rol de "Data Analyst" está desapareciendo** en favor de perfiles más especializados.
     """)
 
 
